@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HeadFirst
 {
-    public partial class Form1 : Form
+    public partial class PartyPlannerForm : Form
     {
-        public Form1()
+        public PartyPlannerForm()
         {
             InitializeComponent();
         }
