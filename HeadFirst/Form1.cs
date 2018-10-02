@@ -22,5 +22,16 @@ namespace HeadFirst
             dinnerParty.CalculateCostOfDecorations(true);
             //DisplayDinnerPartyCost();
         }
+
+        private void DisplayDinnerPartyCost()
+        {
+            decimal Cost = dinnerParty.CalculateCost(HealthyOptionCb.Checked);
+        }
+
+        private void PeopleQuantityNm_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

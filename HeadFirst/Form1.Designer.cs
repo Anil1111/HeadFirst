@@ -33,6 +33,7 @@
             this.FantasyDecorationsCb = new System.Windows.Forms.CheckBox();
             this.HealthyOptionCb = new System.Windows.Forms.CheckBox();
             this.CostLbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PeopleQuantityNm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,13 +49,31 @@
             // PeopleQuantityNm
             // 
             this.PeopleQuantityNm.Location = new System.Drawing.Point(39, 55);
+            this.PeopleQuantityNm.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.PeopleQuantityNm.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.PeopleQuantityNm.Name = "PeopleQuantityNm";
             this.PeopleQuantityNm.Size = new System.Drawing.Size(95, 20);
             this.PeopleQuantityNm.TabIndex = 1;
+            this.PeopleQuantityNm.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.PeopleQuantityNm.ValueChanged += new System.EventHandler(this.PeopleQuantityNm_ValueChanged);
             // 
             // FantasyDecorationsCb
             // 
             this.FantasyDecorationsCb.AutoSize = true;
+            this.FantasyDecorationsCb.Checked = true;
+            this.FantasyDecorationsCb.CheckState = System.Windows.Forms.CheckState.Checked;
             this.FantasyDecorationsCb.Location = new System.Drawing.Point(39, 95);
             this.FantasyDecorationsCb.Name = "FantasyDecorationsCb";
             this.FantasyDecorationsCb.Size = new System.Drawing.Size(123, 17);
@@ -75,22 +94,35 @@
             // CostLbl
             // 
             this.CostLbl.AutoSize = true;
-            this.CostLbl.Location = new System.Drawing.Point(36, 167);
+            this.CostLbl.Location = new System.Drawing.Point(36, 166);
             this.CostLbl.Name = "CostLbl";
             this.CostLbl.Size = new System.Drawing.Size(28, 13);
             this.CostLbl.TabIndex = 4;
             this.CostLbl.Text = "Cost";
             // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label1.Location = new System.Drawing.Point(80, 160);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 25);
+            this.label1.TabIndex = 5;
+            // 
             // PartyPlannerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(283, 274);
+            this.ClientSize = new System.Drawing.Size(214, 217);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.CostLbl);
             this.Controls.Add(this.HealthyOptionCb);
             this.Controls.Add(this.FantasyDecorationsCb);
             this.Controls.Add(this.PeopleQuantityNm);
             this.Controls.Add(this.PeopleQuantityLbl);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PartyPlannerForm";
             this.Text = "Party Planner";
             ((System.ComponentModel.ISupportInitialize)(this.PeopleQuantityNm)).EndInit();
@@ -106,6 +138,7 @@
         private System.Windows.Forms.CheckBox FantasyDecorationsCb;
         private System.Windows.Forms.CheckBox HealthyOptionCb;
         private System.Windows.Forms.Label CostLbl;
+        private System.Windows.Forms.Label label1;
     }
 }
 
