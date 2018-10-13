@@ -33,7 +33,7 @@
             this.FantasyDecorationsCb = new System.Windows.Forms.CheckBox();
             this.HealthyOptionCb = new System.Windows.Forms.CheckBox();
             this.CostLbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.CostDisplay = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PeopleQuantityNm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,6 +80,7 @@
             this.FantasyDecorationsCb.TabIndex = 2;
             this.FantasyDecorationsCb.Text = "Fantasy Decorations";
             this.FantasyDecorationsCb.UseVisualStyleBackColor = true;
+            this.FantasyDecorationsCb.CheckedChanged += new System.EventHandler(this.FantasyDecorationsCb_CheckedChanged);
             // 
             // HealthyOptionCb
             // 
@@ -90,6 +91,7 @@
             this.HealthyOptionCb.TabIndex = 3;
             this.HealthyOptionCb.Text = "Healthy Option";
             this.HealthyOptionCb.UseVisualStyleBackColor = true;
+            this.HealthyOptionCb.CheckedChanged += new System.EventHandler(this.HealthyOptionCb_CheckedChanged);
             // 
             // CostLbl
             // 
@@ -100,22 +102,22 @@
             this.CostLbl.TabIndex = 4;
             this.CostLbl.Text = "Cost";
             // 
-            // label1
+            // CostDisplay
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label1.Location = new System.Drawing.Point(80, 160);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 25);
-            this.label1.TabIndex = 5;
+            this.CostDisplay.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.CostDisplay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.CostDisplay.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.CostDisplay.Location = new System.Drawing.Point(80, 160);
+            this.CostDisplay.Name = "CostDisplay";
+            this.CostDisplay.Size = new System.Drawing.Size(91, 25);
+            this.CostDisplay.TabIndex = 5;
             // 
             // PartyPlannerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(214, 217);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.CostDisplay);
             this.Controls.Add(this.CostLbl);
             this.Controls.Add(this.HealthyOptionCb);
             this.Controls.Add(this.FantasyDecorationsCb);
@@ -138,7 +140,7 @@
         private System.Windows.Forms.CheckBox FantasyDecorationsCb;
         private System.Windows.Forms.CheckBox HealthyOptionCb;
         private System.Windows.Forms.Label CostLbl;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label CostDisplay;
     }
 }
 

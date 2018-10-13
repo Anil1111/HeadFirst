@@ -37,15 +37,23 @@ namespace HeadFirst
             }
         }
 
-        public decimal CalculateCost(bool isOn)
+        public decimal CalculateCost(bool isOn, bool isFantasy)
         {
-            if (isOn)
-            {
-                return CostOfFoodPerPerson * NumberOfPeople +
+            SetHealthyOption(isOn);
+            CalculateCostOfDecorations(isFantasy);
+            
+            decimal cost = CostOfFoodPerPerson * NumberOfPeople +
                        CostOfBeveragesPerPerson * NumberOfPeople +
                        CostOfDecorations;
+
+            if (isOn)
+            {
+                return cost * .95M;
             }
-            return 0.0M;
+            else
+            {
+                return cost;
+            }
         }
 
     }
