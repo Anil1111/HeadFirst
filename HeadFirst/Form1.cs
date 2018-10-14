@@ -17,22 +17,19 @@ namespace HeadFirst
         public PartyPlannerForm()
         {
             InitializeComponent();
-            dinnerParty = new DinnerParty() { NumberOfPeople = 5 };
-            dinnerParty.SetHealthyOption(false);
-            dinnerParty.CalculateCostOfDecorations(true);
+            dinnerParty = new DinnerParty();
             DisplayDinnerPartyCost();
         }
 
         private void DisplayDinnerPartyCost()
         {
-            decimal Cost = dinnerParty.CalculateCost(HealthyOptionCb.Checked, FantasyDecorationsCb.Checked);
+            decimal Cost = dinnerParty.CalculateCost(HealthyOptionCb.Checked, FantasyDecorationsCb.Checked, (int)PeopleQuantityNm.Value);
             //c will display text in currency style, f3 3 decimal places, 0 integer value, 0% percent value, 
             CostDisplay.Text = Cost.ToString("c");
         }
 
         private void PeopleQuantityNm_ValueChanged(object sender, EventArgs e)
         {
-            dinnerParty.NumberOfPeople = (int)PeopleQuantityNm.Value;
             DisplayDinnerPartyCost();
         }
 

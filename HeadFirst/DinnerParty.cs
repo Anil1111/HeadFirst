@@ -8,45 +8,48 @@ namespace HeadFirst
 {
     class DinnerParty
     {
-        public int NumberOfPeople;
-        public int CostOfBeveragesPerPerson;
-        public decimal CostOfDecorations;
-        public const int CostOfFoodPerPerson = 25;
+        private int numberOfPeople;
+        private int costOfBeveragesPerPerson;
+        private decimal costOfDecorations;
+        private const int costOfFoodPerPerson = 25;
 
-        public void SetHealthyOption(bool isOn)
+        public void SetCostOfBeveragesPerPerson(bool isOn)
         {
             if (isOn)
             {
-                CostOfBeveragesPerPerson = 5;
+                costOfBeveragesPerPerson = 5;
             }
             else
             {
-                CostOfBeveragesPerPerson = 20;
+                costOfBeveragesPerPerson = 20;
             }
         }
 
-        public void CalculateCostOfDecorations(bool isFantasy)
+        public void SetCostOfDecorations(bool isFantasy)
         {
             if (isFantasy)
             {
-                CostOfDecorations = (NumberOfPeople * 15M) + 50M;
+                costOfDecorations = (numberOfPeople * 15M) + 50M;
             }
             else
             {
-                CostOfDecorations = (NumberOfPeople * 7.5M) + 30M;
+                costOfDecorations = (numberOfPeople * 7.5M) + 30M;
             }
         }
 
-        public decimal CalculateCost(bool isOn, bool isFantasy)
-        {
-            SetHealthyOption(isOn);
-            CalculateCostOfDecorations(isFantasy);
-            
-            decimal cost = CostOfFoodPerPerson * NumberOfPeople +
-                       CostOfBeveragesPerPerson * NumberOfPeople +
-                       CostOfDecorations;
 
-            if (isOn)
+
+    public decimal CalculateCost(bool isHealthy, bool isFantasy, int numberOfPeople)
+        {
+            this.numberOfPeople = numberOfPeople;
+            SetCostOfBeveragesPerPerson(isHealthy);
+            SetCostOfDecorations(isFantasy);
+            
+            decimal cost = costOfFoodPerPerson * this.numberOfPeople +
+                       costOfBeveragesPerPerson * this.numberOfPeople +
+                       costOfDecorations;
+
+            if (isHealthy)
             {
                 return cost * .95M;
             }
