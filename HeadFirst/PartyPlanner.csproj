@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="BirthdayParty.cs" />
     <Compile Include="DinnerParty.cs" />
+    <Compile Include="MyBaseClass.cs" />
+    <Compile Include="MySubclass.cs" />
     <Compile Include="PartyPlannerForm.cs">
       <SubType>Form</SubType>
     </Compile>
