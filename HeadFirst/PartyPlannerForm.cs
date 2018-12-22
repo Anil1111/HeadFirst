@@ -18,21 +18,26 @@ namespace HeadFirst
         public PartyPlannerForm()
         {
             InitializeComponent();
-            // in book in dinner party constructor there was (int)PeopleQuantityNm.Value,
-            //HealthyOptionCb.Checked, FantasyDecorationsCb.Checked but we've 
-            // handled things differently
-            dinnerParty = new DinnerParty();
-            birthdayParty = new BirthdayParty((int)numberBirthday.Value,
-                fancyBirthday.Checked, cakeWriting.Text);
+            dinnerParty = new DinnerParty(
+                            (int)NumericUpDownNumberOfPeople.Value,
+                            CheckBoxHealthyOption.Checked, 
+                            CheckBoxFantasyDecorations.Checked);
+            birthdayParty = new BirthdayParty(
+                            (int)BirthdayNumericUpDown.Value,
+                            fancyBirthday.Checked, cakeWriting.Text);
+
             DisplayDinnerPartyCost();
             DisplayBirthdayPartyCost();
         }
 
+        //c will display text in currency style, 
+        //f3 will display 3 decimal places,
+        //0 will display integer value,
+        //0% will display percent value,
         private void DisplayDinnerPartyCost()
         {
-            decimal Cost = dinnerParty.CalculateCost(HealthyOptionCb.Checked, FantasyDecorationsCb.Checked, (int)PeopleQuantityNm.Value);
-            //c will display text in currency style, f3 3 decimal places, 0 integer value, 0% percent value, 
-            CostDisplay.Text = Cost.ToString("c");
+            decimal Cost = dinnerParty.Cost; 
+            LabelCostDisplay.Text = Cost.ToString("c");
         }
 
         private void DisplayBirthdayPartyCost()
@@ -40,11 +45,6 @@ namespace HeadFirst
             tooLongLabel.Visible = birthdayParty.CakeWritingTooLong;
             decimal Cost = birthdayParty.Cost;
             birthdayCost.Text = Cost.ToString("c");
-        }
-
-        private void PeopleQuantityNm_ValueChanged(object sender, EventArgs e)
-        {
-            DisplayDinnerPartyCost();
         }
 
         private void FantasyDecorationsCb_CheckedChanged(object sender, EventArgs e)
@@ -57,22 +57,6 @@ namespace HeadFirst
             DisplayDinnerPartyCost();
         }
 
-        private void PeopleQuantityNm2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numberBirthday_ValueChanged(object sender, EventArgs e)
-        {
-            birthdayParty.NumberOfPeople = (int)numberBirthday.Value;
-            DisplayBirthdayPartyCost();
-        }
-
         private void fancyBirthday_CheckedChanged(object sender, EventArgs e)
         {
             birthdayParty.FancyDecorations = fancyBirthday.Checked;
@@ -83,6 +67,17 @@ namespace HeadFirst
         {
             birthdayParty.CakeWriting = cakeWriting.Text;
             DisplayBirthdayPartyCost();
+        }
+
+        private void BirthdayNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            birthdayParty.NumberOfPeople = (int)BirthdayNumericUpDown.Value;
+            DisplayBirthdayPartyCost();
+        }
+
+        private void NumericUpDownNumberOfPeople_ValueChanged(object sender, EventArgs e)
+        {
+            DisplayDinnerPartyCost();
         }
     }
 }

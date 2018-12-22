@@ -6,57 +6,34 @@ using System.Threading.Tasks;
 
 namespace HeadFirst
 {
-    class DinnerParty
+    class DinnerParty : Party
     {
-        private int numberOfPeople;
-        private int costOfBeveragesPerPerson;
-        private decimal costOfDecorations;
-        private const int costOfFoodPerPerson = 25;
+        public bool HealthyOption { get; set; }
 
-        public void SetCostOfBeveragesPerPerson(bool isOn)
+        public DinnerParty(int numberOfPeople, bool fancyDecorations, bool healthyOption)
         {
-            if (isOn)
-            {
-                costOfBeveragesPerPerson = 5;
-            }
-            else
-            {
-                costOfBeveragesPerPerson = 20;
-            }
+            NumberOfPeople = numberOfPeople;
+            FancyDecorations = fancyDecorations;
+            HealthyOption = healthyOption;
         }
 
-        public void SetCostOfDecorations(bool isFantasy)
+        override public decimal Cost
         {
-            if (isFantasy)
-            {
-                costOfDecorations = (numberOfPeople * 15M) + 50M;
-            }
-            else
-            {
-                costOfDecorations = (numberOfPeople * 7.5M) + 30M;
-            }
-        }
+            get {
+                decimal totalCost = base.Cost;
+                int CostOfBeveragesPerPerson = HealthyOption ? 5 : 20;
+                CostOfDecorations = FancyDecorations ? (NumberOfPeople * 15M) + 50M 
+                                                     : (NumberOfPeople * 7.5M) + 30M;
 
+                totalCost = CostOfFoodPerPerson * NumberOfPeople +
+                           CostOfBeveragesPerPerson * NumberOfPeople +
+                           CostOfDecorations;
 
-
-    public decimal CalculateCost(bool isHealthy, bool isFantasy, int numberOfPeople)
-        {
-            this.numberOfPeople = numberOfPeople;
-            SetCostOfBeveragesPerPerson(isHealthy);
-            SetCostOfDecorations(isFantasy);
-            
-            decimal cost = costOfFoodPerPerson * this.numberOfPeople +
-                       costOfBeveragesPerPerson * this.numberOfPeople +
-                       costOfDecorations;
-
-            if (isHealthy)
-            {
-                return cost * .95M;
-            }
-            else
-            {
-                return cost;
-            }
+                if (HealthyOption)
+                    return totalCost * .95M;
+                else
+                    return totalCost;
+            }        
         }
 
     }
