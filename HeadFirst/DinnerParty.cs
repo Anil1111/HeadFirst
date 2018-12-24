@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//todo checking healthy option rises the cost
 namespace HeadFirst
 {
     class DinnerParty : Party
@@ -22,17 +22,12 @@ namespace HeadFirst
             get {
                 decimal totalCost = base.Cost;
                 int CostOfBeveragesPerPerson = HealthyOption ? 5 : 20;
-                CostOfDecorations = FancyDecorations ? (NumberOfPeople * 15M) + 50M 
-                                                     : (NumberOfPeople * 7.5M) + 30M;
 
                 totalCost = CostOfFoodPerPerson * NumberOfPeople +
                            CostOfBeveragesPerPerson * NumberOfPeople +
                            CostOfDecorations;
-
-                if (HealthyOption)
-                    return totalCost * .95M;
-                else
-                    return totalCost;
+                
+                return HealthyOption ? (totalCost * 0.95M) : totalCost;
             }        
         }
 

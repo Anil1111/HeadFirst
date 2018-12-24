@@ -55,22 +55,11 @@ namespace HeadFirst
             }
         }
 
-        private decimal CalculateCostOfDecorations()
-        {
-            decimal costOfDecorations;
-            if (FancyDecorations)
-                costOfDecorations = (NumberOfPeople * 15.00M) + 50M;
-            else
-                costOfDecorations = (NumberOfPeople * 7.50M) + 30M;
-            return costOfDecorations;
-        }
-
         override public decimal Cost
         {
             get
             {
                 decimal totalCost = base.Cost;
-                //decimal totalCost = CalculateCostOfDecorations();
                 totalCost += CostOfFoodPerPerson * NumberOfPeople;
                 decimal cakeCost;
                 if (CakeSize() == 20)
