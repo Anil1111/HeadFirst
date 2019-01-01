@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//todo checking healthy option rises the cost
 namespace HeadFirst
 {
     class DinnerParty : Party

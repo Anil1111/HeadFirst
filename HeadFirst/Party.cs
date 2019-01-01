@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//todo checking fancy decorations lowers the price 
 namespace HeadFirst
 {
     class Party
@@ -19,7 +18,10 @@ namespace HeadFirst
          }
         public virtual decimal Cost { get
             {
-                return CostOfDecorations;
+                if (NumberOfPeople > 12)
+                    return CostOfDecorations + 100;
+                else
+                    return CostOfDecorations;
             }
         }
     }
