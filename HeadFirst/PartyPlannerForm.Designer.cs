@@ -91,9 +91,9 @@
             this.CheckBoxFancyDecorations.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckBoxFancyDecorations.Location = new System.Drawing.Point(66, 82);
             this.CheckBoxFancyDecorations.Name = "CheckBoxFancyDecorations";
-            this.CheckBoxFancyDecorations.Size = new System.Drawing.Size(123, 17);
+            this.CheckBoxFancyDecorations.Size = new System.Drawing.Size(115, 17);
             this.CheckBoxFancyDecorations.TabIndex = 2;
-            this.CheckBoxFancyDecorations.Text = "Fantasy Decorations";
+            this.CheckBoxFancyDecorations.Text = "Fancy Decorations";
             this.CheckBoxFancyDecorations.UseVisualStyleBackColor = true;
             this.CheckBoxFancyDecorations.CheckedChanged += new System.EventHandler(this.CheckBoxFancyDecorations_CheckedChanged);
             // 
@@ -259,9 +259,9 @@
             this.CheckBoxFancyDecorationsBD.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckBoxFancyDecorationsBD.Location = new System.Drawing.Point(24, 63);
             this.CheckBoxFancyDecorationsBD.Name = "CheckBoxFancyDecorationsBD";
-            this.CheckBoxFancyDecorationsBD.Size = new System.Drawing.Size(123, 17);
+            this.CheckBoxFancyDecorationsBD.Size = new System.Drawing.Size(115, 17);
             this.CheckBoxFancyDecorationsBD.TabIndex = 8;
-            this.CheckBoxFancyDecorationsBD.Text = "Fantasy Decorations";
+            this.CheckBoxFancyDecorationsBD.Text = "Fancy Decorations";
             this.CheckBoxFancyDecorationsBD.UseVisualStyleBackColor = true;
             this.CheckBoxFancyDecorationsBD.CheckedChanged += new System.EventHandler(this.CheckBoxFancyDecorationsBD_CheckedChanged);
             // 

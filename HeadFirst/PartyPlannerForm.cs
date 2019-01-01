@@ -29,8 +29,9 @@ namespace HeadFirst
         {
             dinnerParty = new DinnerParty(
                             (int)NumericUpDownNumberOfPeople.Value,
-                            CheckBoxHealthyOption.Checked,
-                            CheckBoxFancyDecorations.Checked);
+                            CheckBoxFancyDecorations.Checked,
+                            CheckBoxHealthyOption.Checked
+                            );
             decimal Cost = dinnerParty.Cost; 
             LabelCostDisplay.Text = Cost.ToString("c");
         }
